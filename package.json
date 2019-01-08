@@ -1,0 +1,27 @@
+{
+  "name": "nytnews-scraper",
+  "version": "1.0.0",
+  "description": "scraper news",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evenou509/NYTNews-Scraper.git"
+  },
+  "author": "Jean Fils-aime",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evenou509/NYTNews-Scraper/issues"
+  },
+  "homepage": "https://github.com/evenou509/NYTNews-Scraper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.4.2"
+  }
+}
