@@ -25,3 +25,9 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
+var routes =require("./route/route.js");
+
+app.use("/", routes);
+
+mongoose.connect("mongodb:")
+
