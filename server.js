@@ -33,7 +33,7 @@ var routes =require("./route/route.js");
 
 app.use("/", routes);
 
-mongoose.connect("mongodb:");
+mongoose.connect("mongodb://heroku_9b4crh0j:rsv1b5pp4e252rdmn6j0iogo7m@ds153394.mlab.com:53394/heroku_9b4crh0j");
 
 var db = mongoose.connection;
 
