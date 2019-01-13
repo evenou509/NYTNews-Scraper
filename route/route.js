@@ -46,7 +46,7 @@ router.post("/scrape", function (req, res) {
             result.title = $(this).children("a").text();
             console.log("result Title? " + result.title);
             // result.body = $(this).children("a").text();
-            result.link = $(this).children("a"), attr("href");
+            result.link = $(this).children("a").attr("href");
 
             scrapedArticles[i] = result;
 
