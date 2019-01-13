@@ -8,8 +8,8 @@ var router = express.Router();
 
 mongoose.Promise = Promise;
 
-var Article = require("../models/Article");
-var Note = require("../models/Note");
+var Article = require("../models/Article.js");
+var Note = require("../models/Note.js");
 
 router.get("/", function (req, res) {
     res.render("index");
@@ -44,8 +44,8 @@ router.post("/scrape", function (req, res) {
             var result = {};
 
             result.title = $(this).children("a").text();
-            console.log(result.title);
-            result.body = $(this).children("a").text();
+            console.log("result Title? " + result.title);
+            // result.body = $(this).children("a").text();
             result.link = $(this).children("a"), attr("href");
 
             scrapedArticles[i] = result;
@@ -112,7 +112,7 @@ router.get("/note/ :id", function(req, res){
             console.log("Delete");
         }
 
-        res,send(doc)
+        res,send(doc);
     });
 });
 
@@ -141,7 +141,7 @@ router.post("/article/ :id", function(req, res){
         if (error) {
             console.log(error)
         } else {
-            Article.findOneAndUpdate({"_id": req.params.id }, {$push: {notes: doc.id}}, {new: true, upset: true})
+            Article.findOneAndUpdate({"_id": req.params.id }, {$push: {notes: doc._id}}, {new: true, upset: true})
 
             .populate('notes')
             .exec(function (err, doc){

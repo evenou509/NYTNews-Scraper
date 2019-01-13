@@ -4,10 +4,14 @@ var express = require("express");
 var cheerio = require("cheerio");
 var axios = require("axios");
 var bodyParser = require("body-parser");
+var request = require("request");
+//////////
+var Note = require("./models/Note.js");
+var Article = require("./models/Article.js");
 
-var PORT = process.envi.PORT || 3000;
-// Require all models
-var db = require("./models");
+mongoose.Promise = Promise;
+
+var PORT = process.env.PORT || 3000;
 
 // Initialize Express
 var app = express();
@@ -29,5 +33,19 @@ var routes =require("./route/route.js");
 
 app.use("/", routes);
 
-mongoose.connect("mongodb:")
+mongoose.connect("mongodb:");
+
+var db = mongoose.connection;
+
+db.on("error", function(error){
+    console.log("Mongoose error: ", error);
+});
+
+db.once("open", function(){
+    console.log("Mongoose connection successful.");
+});
+
+app.listen(PORT, function(){
+    console.log("App running on PORT " + PORT)
+});
 

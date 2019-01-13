@@ -8,10 +8,10 @@ var ArticleSchema = new Schema({
         type: String,
         require: true
     },
-    body: {
-        type: String,
-        require: true
-    },
+    // body: {
+    //     type: String,
+    //     require: true
+    // },
     link: {
         type: String,
         require: true

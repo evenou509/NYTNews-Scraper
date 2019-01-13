@@ -4,8 +4,10 @@ var Schema = mongoose.Schema;
 
 var NoteSchema = new Schema({
     // `body` must be of type String
-    boby: String,
-})
+    boby: {
+        type: String
+    }
+});
 
 // This creates our model from the above schema, using mongoose's model method
 var Note = mongoose.model("Note", NoteSchema);
